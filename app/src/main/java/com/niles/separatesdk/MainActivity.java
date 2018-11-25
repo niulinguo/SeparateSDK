@@ -9,7 +9,7 @@ public class MainActivity extends SeparateActivity {
 
     @Override
     protected void onRegisterActivityLikeManager(ActivityLikeManager likeManager) {
-
+        likeManager.register(new LogActivityLike());
     }
 
     @Override

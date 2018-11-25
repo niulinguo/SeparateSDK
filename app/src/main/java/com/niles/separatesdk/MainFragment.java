@@ -12,6 +12,6 @@ public class MainFragment extends SeparateFragment {
 
     @Override
     protected void onRegisterFragmentLike(FragmentLikeManager likeManager) {
-        super.onRegisterFragmentLike(likeManager);
+
     }
 }
