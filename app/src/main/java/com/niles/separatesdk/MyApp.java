@@ -12,6 +12,6 @@ public class MyApp extends SeparateApplication {
 
     @Override
     protected void onRegisterApplicationLikeManager(ApplicationLikeManager likeManager) {
-
+        likeManager.register(new MyAppLike());
     }
 }

@@ -20,44 +20,40 @@ import android.view.ViewGroup;
  */
 public interface FragmentLike {
 
-    void setFragment(Fragment fragment);
+    void onCreate(Fragment fragment, @Nullable Bundle savedInstanceState);
 
-    Fragment getFragment();
+    View onCreateView(Fragment fragment, @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
-    void onCreate(@Nullable Bundle savedInstanceState);
+    void onResume(Fragment fragment);
 
-    View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
+    void onStart(Fragment fragment);
 
-    void onResume();
+    void onPause(Fragment fragment);
 
-    void onStart();
+    void onStop(Fragment fragment);
 
-    void onPause();
+    void onDestroy(Fragment fragment);
 
-    void onStop();
+    void onDestroyView(Fragment fragment);
 
-    void onDestroy();
+    void onViewCreated(Fragment fragment, @NonNull View view, @Nullable Bundle savedInstanceState);
 
-    void onDestroyView();
+    void onSaveInstanceState(Fragment fragment, @NonNull Bundle outState);
 
-    void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState);
+    void onActivityResult(Fragment fragment, int requestCode, int resultCode, Intent data);
 
-    void onSaveInstanceState(@NonNull Bundle outState);
+    void onActivityCreated(Fragment fragment, @Nullable Bundle savedInstanceState);
 
-    void onActivityResult(int requestCode, int resultCode, Intent data);
+    void onAttach(Fragment fragment, Context context);
 
-    void onActivityCreated(@Nullable Bundle savedInstanceState);
+    boolean onOptionsItemSelected(Fragment fragment, MenuItem item);
 
-    void onAttach(Context context);
+    void onRequestPermissionsResult(Fragment fragment, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults);
 
-    boolean onOptionsItemSelected(MenuItem item);
+    void onDetach(Fragment fragment);
 
-    void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults);
+    void onCreateOptionsMenu(Fragment fragment, Menu menu, MenuInflater inflater);
 
-    void onDetach();
-
-    void onCreateOptionsMenu(Menu menu, MenuInflater inflater);
-
-    void onViewStateRestored(@Nullable Bundle savedInstanceState);
+    void onViewStateRestored(Fragment fragment, @Nullable Bundle savedInstanceState);
 
 }

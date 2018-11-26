@@ -19,102 +19,100 @@ import java.util.List;
 public class ActivityLikeManager implements ActivityLike {
 
     private final List<ActivityLike> mActivityLikes = new ArrayList<>();
-    private Activity mActivity;
 
     public void register(ActivityLike like) {
-        like.setActivity(mActivity);
         mActivityLikes.add(like);
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Activity activity, @Nullable Bundle savedInstanceState) {
         for (ActivityLike like : mActivityLikes) {
-            like.onCreate(savedInstanceState);
+            like.onCreate(activity, savedInstanceState);
         }
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onStart();
+            like.onStart(activity);
         }
     }
 
     @Override
-    public void onRestart() {
+    public void onRestart(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onRestart();
+            like.onRestart(activity);
         }
     }
 
     @Override
-    public void onResume() {
+    public void onResume(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onResume();
+            like.onResume(activity);
         }
     }
 
     @Override
-    public void onPause() {
+    public void onPause(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onPause();
+            like.onPause(activity);
         }
     }
 
     @Override
-    public void onStop() {
+    public void onStop(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onStop();
+            like.onStop(activity);
         }
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroy(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onDestroy();
+            like.onDestroy(activity);
         }
     }
 
     @Override
-    public void onNewIntent(Intent intent) {
+    public void onNewIntent(Activity activity, Intent intent) {
         for (ActivityLike like : mActivityLikes) {
-            like.onNewIntent(intent);
+            like.onNewIntent(activity, intent);
         }
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, @Nullable Intent data) {
         for (ActivityLike like : mActivityLikes) {
-            like.onActivityResult(requestCode, resultCode, data);
+            like.onActivityResult(activity, requestCode, resultCode, data);
         }
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(Activity activity, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         for (ActivityLike like : mActivityLikes) {
-            like.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            like.onRequestPermissionsResult(activity, requestCode, permissions, grantResults);
         }
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Activity activity, Bundle outState) {
         for (ActivityLike like : mActivityLikes) {
-            like.onSaveInstanceState(outState);
+            like.onSaveInstanceState(activity, outState);
         }
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    public void onRestoreInstanceState(Activity activity, Bundle savedInstanceState) {
         for (ActivityLike like : mActivityLikes) {
-            like.onRestoreInstanceState(savedInstanceState);
+            like.onRestoreInstanceState(activity, savedInstanceState);
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Activity activity, Menu menu) {
         boolean result = false;
         for (ActivityLike like : mActivityLikes) {
-            if (like.onCreateOptionsMenu(menu)) {
+            if (like.onCreateOptionsMenu(activity, menu)) {
                 result = true;
             }
         }
@@ -122,10 +120,10 @@ public class ActivityLikeManager implements ActivityLike {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(Activity activity, MenuItem item) {
         boolean result = false;
         for (ActivityLike like : mActivityLikes) {
-            if (like.onOptionsItemSelected(item)) {
+            if (like.onOptionsItemSelected(activity, item)) {
                 result = true;
             }
         }
@@ -133,19 +131,9 @@ public class ActivityLikeManager implements ActivityLike {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed(Activity activity) {
         for (ActivityLike like : mActivityLikes) {
-            like.onBackPressed();
+            like.onBackPressed(activity);
         }
-    }
-
-    @Override
-    public Activity getActivity() {
-        return mActivity;
-    }
-
-    @Override
-    public void setActivity(Activity activity) {
-        mActivity = activity;
     }
 }

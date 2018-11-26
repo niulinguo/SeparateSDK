@@ -1,6 +1,5 @@
 package com.niles.separatesdk;
 
-import com.niles.separate.fragment.FragmentLikeManager;
 import com.niles.separate.fragment.SeparateFragment;
 
 /**
@@ -10,8 +9,4 @@ import com.niles.separate.fragment.SeparateFragment;
  */
 public class MainFragment extends SeparateFragment {
 
-    @Override
-    protected void onRegisterFragmentLike(FragmentLikeManager likeManager) {
-
-    }
 }

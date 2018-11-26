@@ -2,15 +2,7 @@ package com.niles.separatesdk;
 
 import android.os.Bundle;
 
-import com.niles.separate.activity.ActivityLikeManager;
-import com.niles.separate.activity.SeparateActivity;
-
-public class MainActivity extends SeparateActivity {
-
-    @Override
-    protected void onRegisterActivityLikeManager(ActivityLikeManager likeManager) {
-        likeManager.register(new LogActivityLike());
-    }
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

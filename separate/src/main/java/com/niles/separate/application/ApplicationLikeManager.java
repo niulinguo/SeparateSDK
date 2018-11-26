@@ -28,6 +28,9 @@ public class ApplicationLikeManager implements ApplicationLike {
 
     @Override
     public void setApplication(Application application) {
+        if (mApplication != null) {
+            throw new RuntimeException("Only Set Application Once");
+        }
         mApplication = application;
     }
 

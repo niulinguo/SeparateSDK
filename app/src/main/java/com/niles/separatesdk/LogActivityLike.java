@@ -18,94 +18,80 @@ import com.niles.separate.activity.ActivityLike;
  */
 public class LogActivityLike implements ActivityLike {
 
-    private Activity mActivity;
-    private String mTag;
-
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        mTag = mActivity.getClass().getSimpleName();
-        Log.e(mTag, "onCreate");
+    public void onCreate(Activity activity, @Nullable Bundle savedInstanceState) {
+        Log.e(activity.getClass().getSimpleName(), "onCreate");
     }
 
     @Override
-    public void onStart() {
-        Log.e(mTag, "onStart");
+    public void onStart(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onStart");
     }
 
     @Override
-    public void onRestart() {
-        Log.e(mTag, "onRestart");
+    public void onRestart(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onRestart");
     }
 
     @Override
-    public void onResume() {
-        Log.e(mTag, "onResume");
+    public void onResume(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onResume");
     }
 
     @Override
-    public void onPause() {
-        Log.e(mTag, "onPause");
+    public void onPause(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onPause");
     }
 
     @Override
-    public void onStop() {
-        Log.e(mTag, "onStop");
+    public void onStop(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onStop");
     }
 
     @Override
-    public void onDestroy() {
-        Log.e(mTag, "onDestroy");
+    public void onDestroy(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onDestroy");
     }
 
     @Override
-    public void onNewIntent(Intent intent) {
-        Log.e(mTag, "onNewIntent");
+    public void onNewIntent(Activity activity, Intent intent) {
+        Log.e(activity.getClass().getSimpleName(), "onNewIntent");
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        Log.e(mTag, "onActivityResult");
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, @Nullable Intent data) {
+        Log.e(activity.getClass().getSimpleName(), "onActivityResult");
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        Log.e(mTag, "onRequestPermissionsResult");
+    public void onRequestPermissionsResult(Activity activity, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        Log.e(activity.getClass().getSimpleName(), "onRequestPermissionsResult");
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        Log.e(mTag, "onSaveInstanceState");
+    public void onSaveInstanceState(Activity activity, Bundle outState) {
+        Log.e(activity.getClass().getSimpleName(), "onSaveInstanceState");
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        Log.e(mTag, "onRestoreInstanceState");
+    public void onRestoreInstanceState(Activity activity, Bundle savedInstanceState) {
+        Log.e(activity.getClass().getSimpleName(), "onRestoreInstanceState");
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        Log.e(mTag, "onCreateOptionsMenu");
+    public boolean onCreateOptionsMenu(Activity activity, Menu menu) {
+        Log.e(activity.getClass().getSimpleName(), "onCreateOptionsMenu");
         return false;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Log.e(mTag, "onOptionsItemSelected");
+    public boolean onOptionsItemSelected(Activity activity, MenuItem item) {
+        Log.e(activity.getClass().getSimpleName(), "onOptionsItemSelected");
         return false;
     }
 
     @Override
-    public void onBackPressed() {
-        Log.e(mTag, "onBackPressed");
-    }
-
-    @Override
-    public Activity getActivity() {
-        return mActivity;
-    }
-
-    @Override
-    public void setActivity(Activity activity) {
-        mActivity = activity;
+    public void onBackPressed(Activity activity) {
+        Log.e(activity.getClass().getSimpleName(), "onBackPressed");
     }
 }

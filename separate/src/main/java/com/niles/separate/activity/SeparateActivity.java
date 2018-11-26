@@ -20,9 +20,8 @@ public class SeparateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mLikeManager.setActivity(this);
         onRegisterActivityLikeManager(mLikeManager);
-        mLikeManager.onCreate(savedInstanceState);
+        mLikeManager.onCreate(this, savedInstanceState);
     }
 
     protected void onRegisterActivityLikeManager(ActivityLikeManager likeManager) {
@@ -32,83 +31,83 @@ public class SeparateActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mLikeManager.onStart();
+        mLikeManager.onStart(this);
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        mLikeManager.onRestart();
+        mLikeManager.onRestart(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mLikeManager.onResume();
+        mLikeManager.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mLikeManager.onPause();
+        mLikeManager.onPause(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mLikeManager.onStop();
+        mLikeManager.onStop(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mLikeManager.onDestroy();
+        mLikeManager.onDestroy(this);
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        mLikeManager.onNewIntent(intent);
+        mLikeManager.onNewIntent(this, intent);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mLikeManager.onActivityResult(requestCode, resultCode, data);
+        mLikeManager.onActivityResult(this, requestCode, resultCode, data);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        mLikeManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        mLikeManager.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        mLikeManager.onSaveInstanceState(outState);
+        mLikeManager.onSaveInstanceState(this, outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mLikeManager.onRestoreInstanceState(savedInstanceState);
+        mLikeManager.onRestoreInstanceState(this, savedInstanceState);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return mLikeManager.onCreateOptionsMenu(menu);
+        return mLikeManager.onCreateOptionsMenu(this, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return mLikeManager.onOptionsItemSelected(item);
+        return mLikeManager.onOptionsItemSelected(this, item);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mLikeManager.onBackPressed();
+        mLikeManager.onBackPressed(this);
     }
 
 }

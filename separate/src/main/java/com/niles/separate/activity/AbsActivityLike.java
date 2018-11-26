@@ -15,90 +15,78 @@ import android.view.MenuItem;
  */
 public class AbsActivityLike implements ActivityLike {
 
-    private Activity mActivity;
-
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Activity activity, @Nullable Bundle savedInstanceState) {
 
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Activity activity) {
 
     }
 
     @Override
-    public void onRestart() {
+    public void onRestart(Activity activity) {
 
     }
 
     @Override
-    public void onResume() {
+    public void onResume(Activity activity) {
 
     }
 
     @Override
-    public void onPause() {
+    public void onPause(Activity activity) {
 
     }
 
     @Override
-    public void onStop() {
+    public void onStop(Activity activity) {
 
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroy(Activity activity) {
 
     }
 
     @Override
-    public void onNewIntent(Intent intent) {
+    public void onNewIntent(Activity activity, Intent intent) {
 
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, @Nullable Intent data) {
 
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(Activity activity, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Activity activity, Bundle outState) {
 
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    public void onRestoreInstanceState(Activity activity, Bundle savedInstanceState) {
 
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Activity activity, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(Activity activity, MenuItem item) {
         return false;
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed(Activity activity) {
 
-    }
-
-    @Override
-    public Activity getActivity() {
-        return mActivity;
-    }
-
-    @Override
-    public void setActivity(Activity activity) {
-        mActivity = activity;
     }
 }

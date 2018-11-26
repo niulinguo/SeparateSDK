@@ -20,105 +20,93 @@ import android.view.ViewGroup;
  */
 public class AbsFragmentLike implements FragmentLike {
 
-    private Fragment mFragment;
-
     @Override
-    public Fragment getFragment() {
-        return mFragment;
-    }
-
-    @Override
-    public void setFragment(Fragment fragment) {
-        mFragment = fragment;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Fragment fragment, @Nullable Bundle savedInstanceState) {
 
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(Fragment fragment, @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return null;
     }
 
     @Override
-    public void onResume() {
+    public void onResume(Fragment fragment) {
 
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Fragment fragment) {
 
     }
 
     @Override
-    public void onPause() {
+    public void onPause(Fragment fragment) {
 
     }
 
     @Override
-    public void onStop() {
+    public void onStop(Fragment fragment) {
 
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroy(Fragment fragment) {
 
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView(Fragment fragment) {
 
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(Fragment fragment, @NonNull View view, @Nullable Bundle savedInstanceState) {
 
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
+    public void onSaveInstanceState(Fragment fragment, @NonNull Bundle outState) {
 
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(Fragment fragment, int requestCode, int resultCode, Intent data) {
 
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(Fragment fragment, @Nullable Bundle savedInstanceState) {
 
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Fragment fragment, Context context) {
 
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(Fragment fragment, MenuItem item) {
         return false;
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(Fragment fragment, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach(Fragment fragment) {
 
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(Fragment fragment, Menu menu, MenuInflater inflater) {
 
     }
 
     @Override
-    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+    public void onViewStateRestored(Fragment fragment, @Nullable Bundle savedInstanceState) {
 
     }
 }

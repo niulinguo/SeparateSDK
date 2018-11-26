@@ -15,37 +15,33 @@ import android.view.MenuItem;
  */
 public interface ActivityLike {
 
-    void onCreate(@Nullable Bundle savedInstanceState);
+    void onCreate(Activity activity, @Nullable Bundle savedInstanceState);
 
-    void onStart();
+    void onStart(Activity activity);
 
-    void onRestart();
+    void onRestart(Activity activity);
 
-    void onResume();
+    void onResume(Activity activity);
 
-    void onPause();
+    void onPause(Activity activity);
 
-    void onStop();
+    void onStop(Activity activity);
 
-    void onDestroy();
+    void onDestroy(Activity activity);
 
-    void onNewIntent(Intent intent);
+    void onNewIntent(Activity activity, Intent intent);
 
-    void onActivityResult(int requestCode, int resultCode, @Nullable Intent data);
+    void onActivityResult(Activity activity, int requestCode, int resultCode, @Nullable Intent data);
 
-    void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults);
+    void onRequestPermissionsResult(Activity activity, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults);
 
-    void onSaveInstanceState(Bundle outState);
+    void onSaveInstanceState(Activity activity, Bundle outState);
 
-    void onRestoreInstanceState(Bundle savedInstanceState);
+    void onRestoreInstanceState(Activity activity, Bundle savedInstanceState);
 
-    boolean onCreateOptionsMenu(Menu menu);
+    boolean onCreateOptionsMenu(Activity activity, Menu menu);
 
-    boolean onOptionsItemSelected(MenuItem item);
+    boolean onOptionsItemSelected(Activity activity, MenuItem item);
 
-    void onBackPressed();
-
-    Activity getActivity();
-
-    void setActivity(Activity activity);
+    void onBackPressed(Activity activity);
 }

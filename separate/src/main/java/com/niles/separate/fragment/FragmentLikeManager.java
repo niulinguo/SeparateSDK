@@ -24,35 +24,23 @@ import java.util.List;
 public class FragmentLikeManager implements FragmentLike {
 
     private final List<FragmentLike> mFragmentLikes = new ArrayList<>();
-    private Fragment mFragment;
 
     public void register(FragmentLike like) {
-        like.setFragment(mFragment);
         mFragmentLikes.add(like);
     }
 
     @Override
-    public Fragment getFragment() {
-        return mFragment;
-    }
-
-    @Override
-    public void setFragment(Fragment fragment) {
-        mFragment = fragment;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Fragment fragment, @Nullable Bundle savedInstanceState) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onCreate(savedInstanceState);
+            like.onCreate(fragment, savedInstanceState);
         }
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(Fragment fragment, @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View result = null;
         for (FragmentLike like : mFragmentLikes) {
-            View view = like.onCreateView(inflater, container, savedInstanceState);
+            View view = like.onCreateView(fragment, inflater, container, savedInstanceState);
             if (view != null) {
                 result = view;
             }
@@ -61,87 +49,87 @@ public class FragmentLikeManager implements FragmentLike {
     }
 
     @Override
-    public void onResume() {
+    public void onResume(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onResume();
+            like.onResume(fragment);
         }
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onStart();
+            like.onStart(fragment);
         }
     }
 
     @Override
-    public void onPause() {
+    public void onPause(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onPause();
+            like.onPause(fragment);
         }
     }
 
     @Override
-    public void onStop() {
+    public void onStop(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onStop();
+            like.onStop(fragment);
         }
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroy(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onDestroy();
+            like.onDestroy(fragment);
         }
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onDestroyView();
+            like.onDestroyView(fragment);
         }
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(Fragment fragment, @NonNull View view, @Nullable Bundle savedInstanceState) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onViewCreated(view, savedInstanceState);
+            like.onViewCreated(fragment, view, savedInstanceState);
         }
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
+    public void onSaveInstanceState(Fragment fragment, @NonNull Bundle outState) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onSaveInstanceState(outState);
+            like.onSaveInstanceState(fragment, outState);
         }
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(Fragment fragment, int requestCode, int resultCode, Intent data) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onActivityResult(requestCode, resultCode, data);
+            like.onActivityResult(fragment, requestCode, resultCode, data);
         }
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(Fragment fragment, @Nullable Bundle savedInstanceState) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onActivityCreated(savedInstanceState);
+            like.onActivityCreated(fragment, savedInstanceState);
         }
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Fragment fragment, Context context) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onAttach(context);
+            like.onAttach(fragment, context);
         }
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(Fragment fragment, MenuItem item) {
         boolean result = false;
         for (FragmentLike like : mFragmentLikes) {
-            if (like.onOptionsItemSelected(item)) {
+            if (like.onOptionsItemSelected(fragment, item)) {
                 result = true;
             }
         }
@@ -149,30 +137,30 @@ public class FragmentLikeManager implements FragmentLike {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(Fragment fragment, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            like.onRequestPermissionsResult(fragment, requestCode, permissions, grantResults);
         }
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach(Fragment fragment) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onDetach();
+            like.onDetach(fragment);
         }
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(Fragment fragment, Menu menu, MenuInflater inflater) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onCreateOptionsMenu(menu, inflater);
+            like.onCreateOptionsMenu(fragment, menu, inflater);
         }
     }
 
     @Override
-    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+    public void onViewStateRestored(Fragment fragment, @Nullable Bundle savedInstanceState) {
         for (FragmentLike like : mFragmentLikes) {
-            like.onViewStateRestored(savedInstanceState);
+            like.onViewStateRestored(fragment, savedInstanceState);
         }
     }
 }
