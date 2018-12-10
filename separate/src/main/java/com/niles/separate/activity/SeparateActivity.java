@@ -110,4 +110,9 @@ public class SeparateActivity extends AppCompatActivity {
         mLikeManager.onBackPressed(this);
     }
 
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        mLikeManager.onContentChanged();
+    }
 }

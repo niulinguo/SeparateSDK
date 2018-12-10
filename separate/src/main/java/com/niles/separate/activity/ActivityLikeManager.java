@@ -136,4 +136,11 @@ public class ActivityLikeManager implements ActivityLike {
             like.onBackPressed(activity);
         }
     }
+
+    @Override
+    public void onContentChanged() {
+        for (ActivityLike like : mActivityLikes) {
+            like.onContentChanged();
+        }
+    }
 }

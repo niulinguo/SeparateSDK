@@ -89,4 +89,9 @@ public class AbsActivityLike implements ActivityLike {
     public void onBackPressed(Activity activity) {
 
     }
+
+    @Override
+    public void onContentChanged() {
+
+    }
 }

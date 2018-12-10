@@ -44,4 +44,6 @@ public interface ActivityLike {
     boolean onOptionsItemSelected(Activity activity, MenuItem item);
 
     void onBackPressed(Activity activity);
+
+    void onContentChanged();
 }
